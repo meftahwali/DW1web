@@ -1,7 +1,8 @@
 <?php
-include "includes/tamplates/header.php";
+include 'init.php';
+include $tp1.'header.php';
 ?>
-welcome to index
+welcome to index <i class="fa fa-home fa-5x"></i>
 <?php
-include "includes/tamplates/footer.php";
+include $tp1.'footer.php';
 ?>

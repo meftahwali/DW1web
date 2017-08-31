@@ -1,0 +1,35 @@
+/*start main rulez*/
+body{
+	background-color: #F4F4F4;
+	font-size: 16px;
+}
+/*end main rulez*/
+/*start login form*/
+.login{
+	width: 300px;
+	margin: 100px auto;
+}
+.login h4{
+	color: #888;
+}
+.login input{
+	margin-bottom: 10px;
+}
+.login .form-control{
+	background-color: #EAEAEA;
+}
+.login .btn{
+	background-color: #008dde;
+}
+/*fin login form*/
+/*start bootstrap*/
+.navbar {
+	border-radius: 0px;
+	margin-bottom: 0;
+}
+.navbar-brand{
+	font-size: 1em;
+}
+/*end bootstrap*/
+/**/
+/**/
