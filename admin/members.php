@@ -33,7 +33,7 @@ $pageTitle='Members';
                       echo "<td></td>";
                       echo "<td>
                             <a href='members.php?do=Edit&userid=".$row['userID']."' class='btn btn-success'>Edit</a>
-                            <a href='#' class='btn btn-danger'>Delete</a>
+                            <a href='members.php?do=Delete&userid=".$row['userID']."' class='btn btn-danger confirm'>Delete</a>
                             </td>";
                   echo "</tr>";
                  }
@@ -42,8 +42,8 @@ $pageTitle='Members';
               </table>
             </div>
          <a href="members.php?do=Add" class="btn btn-primary"><i class="fa fa-plus"></i>Add New Member</a>
-        </div>
-       <?php  } elseif ($do == 'Add') { ?>
+         </div>
+         <?php  } elseif ($do == 'Add') { ?>
                     <h1 class="text-center">Edit New Member</h1>
                     <div class="container">
                         <form class="form-horizontal" action="?do=Insert" method="post">
@@ -241,6 +241,21 @@ $pageTitle='Members';
                 echo "sorry";
                 }
                 echo "</div>";
+                }elseif ($do=='Delete') {
+                  $userID= isset($_GET['userid'])&& is_numeric($_GET['userid'])? intval($_GET['userid']):0;
+                  // check if the user exist in database
+                  $stmt=$con->prepare("SELECT * FROM users WHERE UserID = ? LIMIT 1");
+                  $stmt->execute(array($userID));
+                  $row = $stmt ->fetch();
+                  $count = $stmt->rowCount();
+                  if($stmt->rowCount()>0){
+                     $stmt= $con->prepare("DELETE FROM users WHERE UserID= :zuser");
+                     $stmt->bindParam(":zuser",$userID);
+                     $stmt->execute();
+                       echo "<div class='alert alert-success'>".$stmt->rowCount().'Record Delete </div>';
+                  }else{
+                        echo  'this ID is not Exits';
+                 }
                 }
     	//end code members
   	include $tp1.'footer.php';
