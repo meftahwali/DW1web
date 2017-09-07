@@ -3,33 +3,56 @@ body{
 	background-color: #F4F4F4;
 	font-size: 16px;
 }
-/*end main rulez*/
-/*start login form*/
-.login{
-	width: 300px;
-	margin: 100px auto;
+.asterisk{
+	font-size: 30px;
+	position: absolute;
+	right: 27px;
+	top: 3px;
+	color: #F00;
 }
+/*end main rulez*/
+/*start Login Form*/
 .login h4{
 	color: #888;
+}
+.login{
+	width: 300px;
+    margin:100px auto;
 }
 .login input{
 	margin-bottom: 10px;
 }
 .login .form-control{
-	background-color: #EAEAEA;
+	background-color: #E5E5E5;
 }
-.login .btn{
+.login .btn {
 	background-color: #008dde;
 }
-/*fin login form*/
-/*start bootstrap*/
-.navbar {
-	border-radius: 0px;
-	margin-bottom: 0;
+/*end login form
+/*start bootstrap edit*/
+ .navbar{
+ 	border-radius: 0;
+ 	margin-bottom: 0;
+ }
+ .form-control{
+	 position: relative;
+ }
+/*end bootstrap edit*/
+/*start members*/
+h1{
+	font-size: 55px;
+	margin: 40px 0;
+	font-weight: bold;
+	color: #666;
 }
-.navbar-brand{
-	font-size: 1em;
+.show-pass{
+position: absolute;
+top: 6px;
+right: -30px;
 }
-/*end bootstrap*/
-/**/
-/**/
+.main-table tr:first-child td{
+background-color: #333;
+color: #FFF;
+text-align: center;
+            }
+/*end members*/
